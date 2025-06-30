@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Sign Up{% endblock %}
+{% block content %}
+<form method="POST">
+    <h3 align="center">Sign Up</h3>
+    <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="text" id="email" name="email" class="form-control" placeholder="Enter Email" required />
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" class="form-control" placeholder="Enter Username" required />
+        <label for="password1">Password</label>
+        <input type="password" id="password1" name="password1" class="form-control" placeholder="Enter Password" required minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Password must contain at least 8 characters, including uppercase, lowercase letters, and numbers." />
+        <label for="password2">Password Again</label>
+        <input type="password" id="password2" name="password2" class="form-control" placeholder="Enter Password Again" required minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Password must contain at least 8 characters, including uppercase, lowercase letters, and numbers." />
+        <br />
+        <div align="center">
+            <button class="btn btn-primary" type="submit">Sign Up</button>
+        </div>
+    </div>
+</form>
+
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function() {
+
+        var flashModal = document.querySelector('.alert.alert-success.alter-dismissible.fade.show');
+ 
+        if (flashModal) {
+
+            setTimeout(function() {
+                flashModal.style.display = 'none';
+            }, 3000);
+        }
+    });
+</script>
+{% endblock %}
